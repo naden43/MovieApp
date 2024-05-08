@@ -105,9 +105,9 @@ class AddMovieViewController: UIViewController , UIPickerViewDelegate , UIPicker
             let genreList:[String] = moveiGenre.text?.components(separatedBy:",") ?? []
             let image:Data  = (moviePoster.image?.pngData()!)!
             
-            let movie : Movie = Movie(title: title , image: image, rating: Float(movieRate.rating), releaseYear: Myear , genre: genreList)
+           /*let movie : Movie = Movie(title: title , image: image, rating: Float(movieRate.rating), releaseYear: Myear , genre: genreList)*/
             
-            movieManager?.addMovie(movie: movie)
+            //movieManager?.addMovie(movie: movie)
             
             self.navigationController?.popViewController(animated: true)
         }

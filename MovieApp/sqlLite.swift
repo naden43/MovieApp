@@ -80,32 +80,32 @@ class DataBaseManager {
             
             //var title:NSString = movie.title.
             
-            sqlite3_bind_text(compiledInsertStatment, 1 ,( movie.title as NSString).utf8String, -1, nil)
-            
-            let movieImage = NSData(data: movie.image)
-            sqlite3_bind_blob(compiledInsertStatment, 5, movieImage.bytes,  Int32(movieImage.length), nil)
-            //sqlite3_bind_text(compiledInsertStatment, 5, (String("img1") as NSString).utf8String, -1, nil)
-            
-            sqlite3_bind_double(compiledInsertStatment, 2, Double(movie.rating))
-            
-            sqlite3_bind_int(compiledInsertStatment, 3, Int32(movie.releaseYear))
-            
-            let genre = movie.genre.joined(separator: ",") as NSString
-            sqlite3_bind_text(compiledInsertStatment, 4, genre.utf8String, -1, nil)
-            
-            if sqlite3_step(compiledInsertStatment) == SQLITE_DONE {
-                
-                print("run successfully")
-            }
-            else{
-                
-                print("fail")
-            }
-            
+            /*sqlite3_bind_text(compiledInsertStatment, 1 ,( movie.title as NSString).utf8String, -1, nil)
+             
+             /* let movieImage = NSData(data: movie.image)
+              sqlite3_bind_blob(compiledInsertStatment, 5, movieImage.bytes,  Int32(movieImage.length), nil)*/
+             //sqlite3_bind_text(compiledInsertStatment, 5, (String("img1") as NSString).utf8String, -1, nil)
+             
+             sqlite3_bind_double(compiledInsertStatment, 2, Double(movie.rating))
+             
+             sqlite3_bind_int(compiledInsertStatment, 3, Int32(movie.releaseYear))
+             
+             let genre = movie.genre.joined(separator: ",") as NSString
+             sqlite3_bind_text(compiledInsertStatment, 4, genre.utf8String, -1, nil)
+             
+             if sqlite3_step(compiledInsertStatment) == SQLITE_DONE {
+             
+             print("run successfully")
+             }
+             else{
+             
+             print("fail")
+             }
+             
+             }
+             
+             sqlite3_finalize(compiledInsertStatment)*/
         }
-        
-        sqlite3_finalize(compiledInsertStatment)
-        
     }
     
     public func retriveMovies() -> [Movie] {
@@ -121,7 +121,7 @@ class DataBaseManager {
             while sqlite3_step(retriveMoviesStatment) == SQLITE_ROW{
                 
                 print("start")
-                let title = String(cString: sqlite3_column_text(retriveMoviesStatment, 0))
+                /*let title = String(cString: sqlite3_column_text(retriveMoviesStatment, 0))*/
                 
               
                 
@@ -133,7 +133,7 @@ class DataBaseManager {
                 
                 let movieImageBlob = sqlite3_column_blob(retriveMoviesStatment, 4)
                 let movieImageBlobLength = sqlite3_column_bytes(retriveMoviesStatment, 4)
-               let imageData = Data(bytes: movieImageBlob!, count: Int(movieImageBlobLength))
+               /*let imageData = Data(bytes: movieImageBlob!, count: Int(movieImageBlobLength))
                 //let image = UIImage(data: imageData)!
                 
                 
@@ -141,11 +141,11 @@ class DataBaseManager {
                 
                 let releaseYear = Int(sqlite3_column_int(retriveMoviesStatment, 2))
                 
-                let genre = String(cString: sqlite3_column_text(retriveMoviesStatment, 3)).components(separatedBy: ",")
+                let genre = String(cString: sqlite3_column_text(retriveMoviesStatment, 3)).components(separatedBy: ",")*/
                 
-                let movie = convertToMovie(title: title, image: imageData, rating: rate, releaseYear: releaseYear, genre: genre)
+                /*let movie = convertToMovie(title: title, image: imageData, rating: rate, releaseYear: releaseYear, genre: genre)
                 
-                listOfMovies.append(movie)
+                listOfMovies.append(movie)*/
             }
             
             print("success")
@@ -155,13 +155,13 @@ class DataBaseManager {
         return listOfMovies
     }
     
-    public func convertToMovie(title : String ,image : Data ,rating : Float,releaseYear : Int,genre : [String]) -> Movie{
+    /*public func convertToMovie(title : String ,image : Data ,rating : Float,releaseYear : Int,genre : [String]) -> Movie{
         
-        let movie = Movie(title: title, image: image, rating: rating, releaseYear: releaseYear, genre: genre)
+        /*let movie = Movie(title: title, image: image, rating: rating, releaseYear: releaseYear, genre: genre)*/
         
         return movie
         
-    }
+    }*/
     
     public func deleteMovie(key : String){
         

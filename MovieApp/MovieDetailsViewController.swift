@@ -7,7 +7,7 @@
 
 import UIKit
 import Cosmos
-
+import Kingfisher
 class MovieDetailsViewController: UIViewController {
 
     @IBOutlet weak var movieRate: CosmosView!
@@ -20,16 +20,21 @@ class MovieDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         movieTitle.text = movie?.title
+        let rate = (movie?.rating ?? 0.0) - 5.0
+        //movieRate.rating = Double(rate)
         movieRate.rating = Double(movie?.rating ?? 0.0)
         movieRate.settings.updateOnTouch = false
         
-        movieImg.image = UIImage(data: movie?.image ?? Data())
+        //movieImg.image = UIImage(data: movie?.image ?? Data())
         
         //movieRate.text = String(movie?.rating ?? 5)
         
+        let url = URL(string: movie?.image ?? "")
+        movieImg.kf.setImage(with: url)
+        
         movieYear.text =  String(movie?.releaseYear ?? 2001)
         
-        movieGenre.text = movie?.genre.joined()
+        movieGenre.text = movie?.genre.joined(separator: " , ")
         
         
         

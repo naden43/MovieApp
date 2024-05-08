@@ -8,6 +8,24 @@
         "revision" : "40ba10aaf175bf50abefd0e518bd3b40862af3b1",
         "version" : "25.0.1"
       }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "5b92f029fab2cce44386d28588098b5be0824ef5",
+        "version" : "7.11.0"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "57da4b1270cab7c2228919eabc0e4e1bf93e48ea"
+      }
     }
   ],
   "version" : 2

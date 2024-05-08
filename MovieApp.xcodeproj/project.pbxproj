@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124952C92BE0FCC8001EADB6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 124952C82BE0FCC8001EADB6 /* Kingfisher */; };
+		127C92AE2BE26C0F00C0D2C8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 127C92AD2BE26C0F00C0D2C8 /* Reachability */; };
+		127C92B42BE26D9F00C0D2C8 /* MovieApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 127C92B22BE26D9F00C0D2C8 /* MovieApp.xcdatamodeld */; };
 		12AD23482BDE5FCE000C34FE /* sqlLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AD23472BDE5FCE000C34FE /* sqlLite.swift */; };
 		12B8A75D2BD9239C0018F377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8A75C2BD9239C0018F377 /* AppDelegate.swift */; };
 		12B8A75F2BD9239C0018F377 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8A75E2BD9239C0018F377 /* SceneDelegate.swift */; };
@@ -22,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		127C92B32BE26D9F00C0D2C8 /* MovieApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieApp.xcdatamodel; sourceTree = "<group>"; };
 		12AD23472BDE5FCE000C34FE /* sqlLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sqlLite.swift; sourceTree = "<group>"; };
 		12B8A7592BD9239C0018F377 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B8A75C2BD9239C0018F377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				124952C92BE0FCC8001EADB6 /* Kingfisher in Frameworks */,
+				127C92AE2BE26C0F00C0D2C8 /* Reachability in Frameworks */,
 				12B8A7722BD924A60018F377 /* Cosmos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				12B8A75C2BD9239C0018F377 /* AppDelegate.swift */,
+				127C92B22BE26D9F00C0D2C8 /* MovieApp.xcdatamodeld */,
 				12B8A75E2BD9239C0018F377 /* SceneDelegate.swift */,
 				12B8A7602BD9239C0018F377 /* MovieDetailsViewController.swift */,
 				12B8A7622BD9239C0018F377 /* Main.storyboard */,
@@ -102,6 +109,8 @@
 			name = MovieApp;
 			packageProductDependencies = (
 				12B8A7712BD924A60018F377 /* Cosmos */,
+				124952C82BE0FCC8001EADB6 /* Kingfisher */,
+				127C92AD2BE26C0F00C0D2C8 /* Reachability */,
 			);
 			productName = MovieApp;
 			productReference = 12B8A7592BD9239C0018F377 /* MovieApp.app */;
@@ -133,6 +142,8 @@
 			mainGroup = 12B8A7502BD9239C0018F377;
 			packageReferences = (
 				12B8A7702BD924A60018F377 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				124952C72BE0FCC8001EADB6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				127C92AC2BE26C0E00C0D2C8 /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = 12B8A75A2BD9239C0018F377 /* Products */;
 			projectDirPath = "";
@@ -169,6 +180,7 @@
 				12B8A7762BD926C70018F377 /* Movie.swift in Sources */,
 				12AD23482BDE5FCE000C34FE /* sqlLite.swift in Sources */,
 				12B8A7782BD92A500018F377 /* AddMovieViewController.swift in Sources */,
+				127C92B42BE26D9F00C0D2C8 /* MovieApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +403,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		124952C72BE0FCC8001EADB6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+		127C92AC2BE26C0E00C0D2C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		12B8A7702BD924A60018F377 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
@@ -402,12 +430,35 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		124952C82BE0FCC8001EADB6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 124952C72BE0FCC8001EADB6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		127C92AD2BE26C0F00C0D2C8 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 127C92AC2BE26C0E00C0D2C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
 		12B8A7712BD924A60018F377 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 12B8A7702BD924A60018F377 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		127C92B22BE26D9F00C0D2C8 /* MovieApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				127C92B32BE26D9F00C0D2C8 /* MovieApp.xcdatamodel */,
+			);
+			currentVersion = 127C92B32BE26D9F00C0D2C8 /* MovieApp.xcdatamodel */;
+			path = MovieApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 12B8A7512BD9239C0018F377 /* Project object */;
 }

@@ -18,7 +18,7 @@ class MovieDetailsViewController: UIViewController {
     var movie:Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("yes")
         movieTitle.text = movie?.title
         let rate = (movie?.rating ?? 0.0) - 5.0
         //movieRate.rating = Double(rate)
